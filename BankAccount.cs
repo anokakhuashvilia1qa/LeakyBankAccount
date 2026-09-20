@@ -2,29 +2,37 @@
 
 public class BankAccount
 {
-	public BankAccount()
-	{
-		private double balance;
-		private string owner;
+    private double balance;
+    private string owner;
 
-        public void Withdraw(double amount)
-        {
-            // BUG: Does not check for negative amounts!
-            if (amount > balance)
-            {
-                throw new ArgumentException("Insufficient funds!");
-            }
-            balance -= amount;
-        }
+    public BankAccount(string owner)
+    {
+        this.owner = owner;
+        balance = 0;
+    }
+<<<<<<< HEAD
+}
+=======
 
-        public void Deposit(double amount)
+    public void Withdraw(double amount)
+    {
+        // BUG: Does not check for negative amounts!
+        if (amount > balance)
         {
-            balance -= amount;
+            throw new ArgumentException("Insufficient funds!");
         }
+        balance -= amount;
+    }
 
-        public double GetBalance()
-        {
-            return balance;
-        }
+    public void Deposit(double amount)
+    {
+        balance += amount;
+    }
+
+    public double GetBalance()
+    {
+        return balance;
     }
 }
+
+>>>>>>> 721e73a (Commit #2)
