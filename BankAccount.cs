@@ -10,13 +10,14 @@ public class BankAccount
         this.owner = owner;
         balance = 0;
     }
-<<<<<<< HEAD
-}
-=======
 
     public void Withdraw(double amount)
     {
         // BUG: Does not check for negative amounts!
+        if (amount < 0)
+        {
+            throw new ArgumentException("Withdrawal amount cannot be negative!");
+        }
         if (amount > balance)
         {
             throw new ArgumentException("Insufficient funds!");
@@ -35,4 +36,4 @@ public class BankAccount
     }
 }
 
->>>>>>> 721e73a (Commit #2)
+

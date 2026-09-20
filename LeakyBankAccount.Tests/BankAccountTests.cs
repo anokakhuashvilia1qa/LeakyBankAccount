@@ -12,7 +12,7 @@ public class BankAccountTests
 
         account.Withdraw(30);
 
-        Assert.AreEqual(70, account.GetBalance(), 1e-6);
+        Assert.That(account.GetBalance(), Is.EqualTo(70).Within(1e-6)); ;
     }
 
     [Test]
